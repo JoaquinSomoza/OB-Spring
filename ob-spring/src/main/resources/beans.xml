@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Ejercicio 1.b-->
+<!--Crear el archivo beans.xml con un bean para la clase Saludo.-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Habilitar el escaneo de clases en el archivo beans.xml -->
+    <context:component-scan base-package="org.exampleEj1y2">
+
+    </context:component-scan>
+
+    <bean id="saludo" class="org.exampleEj1y2.Saludo" >
+
+    </bean>
+
+
+
+    <bean id="userService" class="org.exampleEj1y2.UserService" >
+        <constructor-arg name="notificationService" ref="notificationService">
+
+        </constructor-arg>
+    </bean>
+
+
+</beans>
+
+
+
